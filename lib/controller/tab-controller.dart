@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_translation/utils/app-color.dart';
 
 import '../views/home-screen.dart';
 import '../views/profile-sccreen.dart';
@@ -56,7 +57,7 @@ class TabBarController extends Cubit{
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Icon(Icons.home,color: selectedIndex == 0
-                                ? Colors.amber
+                                ? AppColor.WHITE
                                 : Colors.grey,size: 24.w,),
                             SizedBox(
                               height: 3.h,
@@ -65,7 +66,7 @@ class TabBarController extends Cubit{
                               'Home',
                               style: TextStyle(
                                   color: selectedIndex == 0
-                                      ? Colors.amber
+                                      ? AppColor.WHITE
                                       : Colors.grey,
                                   fontFamily: 'Lexend',
                                   fontSize: 12.sp),
@@ -107,7 +108,7 @@ class TabBarController extends Cubit{
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(Icons.person,color: selectedIndex == 1
-                                ? Colors.amber
+                                ? AppColor.WHITE
                                 : Colors.grey,size: 24.w,),
                             SizedBox(
                               height: 1.h,
@@ -116,7 +117,7 @@ class TabBarController extends Cubit{
                               'Profile',
                               style: TextStyle(
                                   color: selectedIndex == 1
-                                      ? Colors.amber
+                                      ? AppColor.WHITE
                                       : Colors.grey,
                                   fontFamily: 'Lexend',
                                   fontSize: 12.sp),

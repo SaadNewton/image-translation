@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_translation/controller/tab-controller.dart';
+import 'package:image_translation/utils/app-color.dart';
 
 class TabScreen extends StatelessWidget {
   const TabScreen({super.key});
@@ -21,7 +22,7 @@ class TabScreen extends StatelessWidget {
               // margin: EdgeInsets.symmetric(vertical: 2.h,horizontal: 2.w),
               margin: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 12.h),
               decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: AppColor.SECONDARY,
                   // border: Border.all(color: AppColors.PRIMARY),
                   boxShadow: const [
                     BoxShadow(
