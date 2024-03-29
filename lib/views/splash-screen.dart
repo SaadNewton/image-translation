@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,11 +26,28 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocBuilder<SplashController, dynamic>(
       bloc: SplashController(),
       builder: (context, _) {
-        return Scaffold(
-          body: Image.asset(
-            AppImages.SPLASH,
-            height: 100.sh,
-            fit: BoxFit.fill,
+        return SafeArea(
+          child: Scaffold(
+            body: Stack(
+              children: [
+                Container(
+                  width: 1.sw,
+                  child: Image.asset(
+                    AppImages.SPLASH_BG,
+                    // width: 100.w,
+
+                    // height: 100.sh,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Center(
+                  child: SizedBox(
+                      width: 0.6.sw,
+                      // height: 0.2.sh,
+                      child: Image.asset(AppImages.LOGO,)),
+                )
+              ],
+            ),
           ),
         );
       }

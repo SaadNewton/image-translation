@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_translation/controller/home-controller.dart';
+import 'package:image_translation/controller/onboard-controller.dart';
 import 'package:image_translation/controller/splash-controller.dart';
 import 'package:image_translation/views/home-screen.dart';
 import 'package:image_translation/views/login-screen.dart';
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => LoginController()),
         BlocProvider(create: (_) => TabBarController()),
         BlocProvider(create: (_) => SplashController()),
+        BlocProvider(create: (_) => OnboardController()),
       ],
       child: ScreenUtilInit(
-        designSize: const Size(360, 700),
+        designSize: const Size(360, 800),
         builder: (context,_) {
           return MaterialApp(
             title: 'Image Translator',

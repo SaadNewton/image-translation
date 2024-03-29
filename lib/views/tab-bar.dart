@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_translation/controller/tab-controller.dart';
 import 'package:image_translation/utils/app-color.dart';
 
+import '../utils/images.dart';
+
 class TabScreen extends StatelessWidget {
   const TabScreen({super.key});
 
@@ -37,18 +39,33 @@ class TabScreen extends StatelessWidget {
             ),
           ),
           extendBody: true,
-          body: PageView.builder(
-              controller: tabController.controller,
-              itemCount: tabController.widgetList.length,
-              onPageChanged: (value) {
-                tabController.selectedIndex = value;
-                tabController.emit(tabController.selectedIndex);
-              },
-              itemBuilder: (context, index) {
-                return Container(
-                  child: tabController.widgetList[index],
-                );
-              }),
+          body: Stack(
+            children: [
+
+              Container(
+                width: 1.sw,
+                child: Image.asset(
+                  AppImages.HOME_BG,
+                  // width: 100.w,
+
+                  // height: 100.sh,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              PageView.builder(
+                  controller: tabController.controller,
+                  itemCount: tabController.widgetList.length,
+                  onPageChanged: (value) {
+                    tabController.selectedIndex = value;
+                    tabController.emit(tabController.selectedIndex);
+                  },
+                  itemBuilder: (context, index) {
+                    return Container(
+                      child: tabController.widgetList[index],
+                    );
+                  }),
+            ],
+          ),
         );
       }
     );
