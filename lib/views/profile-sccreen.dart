@@ -10,29 +10,29 @@ class ProfileScreen extends StatelessWidget {
     return Builder(
       builder: (context) {
         return Scaffold(
-          appBar: PreferredSize(
-              preferredSize: Size(100.sw, 100.h),
-              child: Container(
-                height: 80.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20.sp),
-                    bottomRight: Radius.circular(20.sp),
+          backgroundColor: Colors.transparent,
+
+          body: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 0.1.sh,),
+              Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: AppColor.WHITE,
+                    shape: BoxShape.circle
                   ),
-                  color: AppColor.SECONDARY,
+                  padding: EdgeInsets.all(14.sp),
+                  child: Icon(Icons.person,size: 60.sp,),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Profile',
-                      style: TextStyle(
-                          fontSize: 22.sp, fontWeight: FontWeight.bold,color: AppColor.WHITE),
-                    )
-                  ],
-                ),
-              )),
+              ),
+              SizedBox(height: 0.02.sh,),
+              Text('Saad Saleem',style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.bold),),
+              SizedBox(height: 0.004.sh,),
+              Text('saad.sal748@gmail.com',style: TextStyle(fontSize: 14.sp),),
+            ],
+          ),
 
         );
       }
