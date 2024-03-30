@@ -48,10 +48,11 @@ class LoginScreen extends StatelessWidget {
                 right: 0.16.sw,
                 child: InkWell(
                   onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const TabScreen()),
-                    );
+                    loginCubit.handleSignIn(context);
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => const TabScreen()),
+                    // );
                   },
                   child: Container(
                     decoration: BoxDecoration(
